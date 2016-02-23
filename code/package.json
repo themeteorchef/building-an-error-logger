@@ -9,6 +9,7 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "body-parser": "^1.15.0",
     "lodash": "^4.5.1"
   }
 }

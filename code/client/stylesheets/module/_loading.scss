@@ -1,10 +1,4 @@
 .loading {
-  -webkit-animation-name: rotate;
-  -webkit-animation-duration: 0.5s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-name: rotate;
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation: rotate 0.5s infinite linear;
+  animation: rotate 0.5s infinite linear;
 }

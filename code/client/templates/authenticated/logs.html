@@ -1,0 +1,53 @@
+<template name="logs">
+  <h4 class="page-header">Error Logs</h4>
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#live-stream" aria-controls="live-stream" role="tab" data-toggle="tab">
+        <i class="fa fa-refresh fa-spin"></i> Live Stream
+      </a>
+    </li>
+    <li role="presentation"><a href="#errors" aria-controls="errors" role="tab" data-toggle="tab">Errors</a></li>
+    <li role="presentation"><a href="#warnings" aria-controls="warnings" role="tab" data-toggle="tab">Warnings</a></li>
+    <li role="presentation"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Info</a></li>
+    <li role="presentation"><a href="#success" aria-controls="success" role="tab" data-toggle="tab">Success</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="live-stream">
+      <div class="logs live">
+        {{#each logs 'live'}}
+          {{> logItem}}
+        {{/each}}
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="errors">
+      <div class="logs danger">
+        {{#each logs 'danger'}}
+          {{> logItem}}
+        {{/each}}
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="warnings">
+      <div class="logs warning">
+        {{#each logs 'warning'}}
+          {{> logItem}}
+        {{/each}}
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="info">
+      <div class="logs info">
+        {{#each logs 'info'}}
+          {{> logItem}}
+        {{/each}}
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="success">
+      <div class="logs success">
+        {{#each logs 'success'}}
+          {{> logItem}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>

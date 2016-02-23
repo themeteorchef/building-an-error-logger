@@ -14,8 +14,11 @@ module.exports = {
   'globals': {
     'Bert': true,
     'BlazeLayout': true,
+    'document': true,
     'Documents': true,
     'FlowRouter': true,
+    'Logs': true,
+    'Picker': true,
     'Roles': true,
     'SimpleSchema': true
   },

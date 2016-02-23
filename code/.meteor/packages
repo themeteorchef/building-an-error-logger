@@ -30,6 +30,7 @@ reactive-dict
 aldeed:collection2
 tracker
 twbs:bootstrap
-momentjs:moment
 alanning:roles
 themeteorchef:seeder
+meteorhacks:picker
+momentjs:moment

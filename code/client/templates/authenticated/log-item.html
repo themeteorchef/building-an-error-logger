@@ -1,0 +1,26 @@
+<template name="logItem">
+  <div class="panel panel-{{type}}">
+    <div class="panel-heading clearfix">
+      <strong class="pull-left"><i class="fa fa-{{icon type}}"></i> {{title}}</strong>
+      <p class="pull-right">{{humanDate date}}</p>
+    </div>
+    <div class="panel-body">
+      <pre><code>{{message}}</code></pre>
+
+      {{#if hasPayload payload}}
+        <div class="table-responsive">
+          <table class="table table-bordered payload">
+            <tbody>
+              {{#each payloadItems payload}}
+                <tr>
+                  <th width="20%">{{property}}</th>
+                  <td>{{value}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>
