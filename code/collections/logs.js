@@ -1,5 +1,7 @@
 Logs = new Mongo.Collection( 'logs' );
 
+Logs._ensureIndex( { "date": 1 }, { expireAfterSeconds: 60 } );
+
 Logs.allow({
   insert: () => false,
   update: () => false,
@@ -18,8 +20,8 @@ let LogsSchema = new SimpleSchema({
     label: 'The ID of the application this log item belongs to.'
   },
   'date': {
-    type: String,
-    label: 'The ISO 8601 date string for when this log item occurred.'
+    type: Date,
+    label: 'The date and time when this log item occurred.'
   },
   'type': {
     type: String,

@@ -20,7 +20,8 @@ module.exports = {
     'Logs': true,
     'Picker': true,
     'Roles': true,
-    'SimpleSchema': true
+    'SimpleSchema': true,
+    'WhaHappened': true
   },
   'rules': {
     'comma-dangle': [ 2, 'never' ],

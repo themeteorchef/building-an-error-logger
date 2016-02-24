@@ -1,6 +1,4 @@
 <template name="logs">
-  <h4 class="page-header">Error Logs</h4>
-
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active">
       <a href="#live-stream" aria-controls="live-stream" role="tab" data-toggle="tab">
@@ -18,6 +16,8 @@
       <div class="logs live">
         {{#each logs 'live'}}
           {{> logItem}}
+        {{else}}
+          <p class="alert alert-warning">Nothing logged recently. Awesome!</p>
         {{/each}}
       </div>
     </div>
@@ -25,6 +25,8 @@
       <div class="logs danger">
         {{#each logs 'danger'}}
           {{> logItem}}
+        {{else}}
+          <p class="alert alert-warning">Nothing logged recently. Awesome!</p>
         {{/each}}
       </div>
     </div>
@@ -32,6 +34,8 @@
       <div class="logs warning">
         {{#each logs 'warning'}}
           {{> logItem}}
+        {{else}}
+          <p class="alert alert-warning">Nothing logged recently. Awesome!</p>
         {{/each}}
       </div>
     </div>
@@ -39,6 +43,8 @@
       <div class="logs info">
         {{#each logs 'info'}}
           {{> logItem}}
+        {{else}}
+          <p class="alert alert-warning">Nothing logged recently. Awesome!</p>
         {{/each}}
       </div>
     </div>
@@ -46,6 +52,8 @@
       <div class="logs success">
         {{#each logs 'success'}}
           {{> logItem}}
+        {{else}}
+          <p class="alert alert-warning">Nothing logged recently. Awesome!</p>
         {{/each}}
       </div>
     </div>

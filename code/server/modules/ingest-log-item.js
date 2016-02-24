@@ -1,11 +1,9 @@
-const _handlePreflight = ( method, response ) => {
+const _handlePreflight = ( response ) => {
   response.setHeader( 'Access-Control-Allow-Origin', '*' );
-
-  if ( method === 'OPTIONS' ) {
-    response.setHeader( 'Access-Control-Allow-Headers', 'Content-Type, Accept, X-API-Key' );
-    response.setHeader( 'Access-Control-Allow-Methods', 'OPTIONS, POST' );
-    response.end( 'Handle OPTIONS preflight.' );
-  }
+  response.setHeader( 'Access-Control-Allow-Headers', 'Content-Type, Accept, X-API-Key' );
+  response.setHeader( 'Access-Control-Allow-Methods', 'OPTIONS, POST' );
+  response.setHeader( 'Content-Type', 'text/plain' );
+  response.end( 'Handle OPTIONS preflight.' );
 };
 
 const _authenticateRequest = ( token ) => {
@@ -26,7 +24,6 @@ const _verifyItemContents = ( item ) => {
 };
 
 const _handleResponse = ( response, code, message ) => {
-  response.setHeader( 'Content-Type', 'text/plain' );
   response.statusCode = code;
   response.end( message );
 };
