@@ -1,5 +1,11 @@
 const publicRoutes = FlowRouter.group( { name: 'public' } );
 
+publicRoutes.route( '/', {
+  action() {
+    FlowRouter.go( '/login' );
+  }
+});
+
 publicRoutes.route( '/signup', {
   name: 'signup',
   action() {

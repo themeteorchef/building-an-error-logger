@@ -1,6 +1,3 @@
-// Note: this is intended to be run from another application, but is included
-// here as part of the recipe source.
-
 let Future = require( 'fibers/future' );
 
 class WhaHappenedAPI {

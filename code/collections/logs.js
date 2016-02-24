@@ -1,6 +1,8 @@
 Logs = new Mongo.Collection( 'logs' );
 
-Logs._ensureIndex( { "date": 1 }, { expireAfterSeconds: 60 } );
+if ( Meteor.isServer ) {
+  Logs._ensureIndex( { 'date': 1 }, { expireAfterSeconds: 300 } );
+}
 
 Logs.allow({
   insert: () => false,
