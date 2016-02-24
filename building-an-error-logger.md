@@ -819,7 +819,7 @@ class WhaHappenedAPI {
 WhaHappened = new WhaHappenedAPI();
 ```
 
-Clever beagles, aren't we? See what this is doing. In addition to being able to send log messages directly to our API, here, we define `watch()` method which _also_ enables the ExMachina team to catch errors they didn't expect. Piggybacking on Node's (remember, Node is what Meteor runs on top of) `process.on( 'uncaughtException' )` method, we can actively watch for errors and pass them to our API. This means that if something happens that wasn't planned for, the error will still make it back to our logger! How cool is that?
+Clever beagles, aren't we? See what this is doing. In addition to being able to send log messages directly to our API, here, we define a `watch()` method which _also_ enables the ExMachina team to catch errors they didn't expect. Piggybacking on Node's (remember, Node is what Meteor runs on top of) `process.on( 'uncaughtException' )` method, we can actively watch for errors and pass them to our API. This means that if something happens that wasn't planned for, the error will still make it back to our logger! How cool is that?
 
 To make this work, we need to wrap the callback function passed to `process.on()` in a call to `Meteor.bindEnvironment()`. Because the code we're calling inside of this callback function is specific to the main Meteor application thread, we need to ensure that we still have access to that thread. Using `Meteor.bindEnvironment()`, we keep that connection intact—without this we'd get an error from Meteor.
 
@@ -833,7 +833,7 @@ Meteor.startup( () => {
 });
 ```
 
-Done! We've officially completed a robust error logging system for ExMachina. Let's give Amélie a call to let her know we're ready for a demo.
+Done! We've officially completed a robust error logging system for ExMachina. Let's give Amélie a call to let her know we're ready for a demo :)
 
 ### Wrap up & summary
 In this recipe, we learned how to build a custom error logging system. We learned about using MongoDB indexes to automatically delete content, as well as how to wire up an API that automates inserting new data into a collection. We also learned how to wire up an API wrapper to make calls to our API endpoint effortless for other developers. To wrap everything up in a neat little bow, we built a user interface for viewing our log in real-time, levearing Meteor's reactivity to bring it all together.
