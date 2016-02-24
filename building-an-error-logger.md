@@ -485,7 +485,7 @@ See how this is working? Up top we add a subscription to our freshly minted `log
 If the type is anything other than live, we want to filter by that type. Once we have our `query` sorted out, we pass it to our `Logs.find()` call and then return the result from our helper if we get something back. Easy enough! Now our data is piping into our template. This is good, but we can add a little polish to this process.
 
 #### The bottom is the top
-While this next part is entirely optional—feel free to skip ahead!—because we're building a logger, we want to show the latest log messages _first_. As a common convention for logs, the newest messages are generally at the bottom of the window, with older messages appearing above. Real quick, what we want to do is make it so that when one of the following happens, we "scroll" to the bottom of our messages list in the selected tab:
+While this next part is entirely optional—feel free to skip ahead!—because we're building a logger, we want to show the latest log messages _first_. As a common convention for logs, the newest messages are generally at the bottom of the window, with older messages appear above. Real quick, what we want to do is make it so that when one of the following happens, we "scroll" to the bottom of our messages list in the selected tab:
 
 1. The `logs` template renders.
 2. We change to a different tab displaying a different list.
@@ -508,6 +508,11 @@ let setLogScroll = ( type ) => {
 ```
 
 What the heck?! According to the Consortium of Übernerds, selecting the DOM with jQuery is now considered a punishable offense. Fair enough. As JavaScript continues to evolve, tools like jQuery that helped us to keep APIs consistent and cross-browser are becoming less and less needed. For our needs, we can use some native JavaScript to select each of our log containers and manipulate them as required.
+
+<figure>
+  <img src="https://tmc-post-content.s3.amazonaws.com/2016-02-24_07:25:13:108_zuckerberg-overlord.jpg" alt="Zuckerberg wants your soul.">
+  <figcaption>Zuckerberg wants your soul.</figcaption>
+</figure>
 
 Here, we're using a similar trick as we did for the "dynamic" query we passed to our collection above. Here, if our `setLogScroll` function is passed a `type` parameter, we want to add it to the classes that we're looking for in our DOM. If we don't get a type, we simply want to grab any element with a `.logs` class.
 
